@@ -1,5 +1,7 @@
 package au.com.whitellama.budgetmodelling.model;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Income extends BudgetEvent {
@@ -36,5 +38,4 @@ public class Income extends BudgetEvent {
 	public String getReferenceDate() {
 		return referenceDate;
 	}
-	
 }
