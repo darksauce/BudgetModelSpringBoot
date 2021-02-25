@@ -1,0 +1,16 @@
+<table class="item-table" *ngIf="budgetItems">
+    <tr>
+        <th>Income/Expense</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Frequency</th>
+        <th>Reference Date</th>
+    </tr>
+    <tr *ngFor="let item of budgetItems; index as i;">
+        <td>{{ item.eventType }}</td>
+        <td>{{ item.label }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.freqType }}</td>
+        <td>{{ item.referenceDate }}</td>
+    </tr>
+</table>

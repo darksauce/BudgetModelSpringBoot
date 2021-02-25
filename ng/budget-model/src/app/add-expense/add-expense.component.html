@@ -1,0 +1,29 @@
+<h1>Add Expense</h1>
+<span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+<table class="item-table">
+    <tr>
+        <th>Income/Expense</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Frequency</th>
+        <th>Reference Date</th>
+    </tr>
+    <tr>
+        <td>EXPENSE</td>
+        <td><input type="text" [(ngModel)]="desc"></td>
+        <td><input type="text" [(ngModel)]="amount"></td>
+        <td>
+            <select [(ngModel)]="frequency">
+                <option value="DY">Daily</option>
+                <option value="WK">Weekly</option>
+                <option value="FN">Fortnightly</option>
+                <option value="MTH">Monthly</option>
+                <option value="QTR">Quarterly</option>
+                <option value="SMTH">Six Monthly</option>
+                <option value="YR">Yearly</option>
+            </select>
+        </td>
+        <td><input type="text" [(ngModel)]="referenceDate"></td>
+    </tr>
+</table>
+<button (click)="addExpense()">Add Expense</button>

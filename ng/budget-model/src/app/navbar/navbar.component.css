@@ -1,0 +1,12 @@
+.navbar {
+    background-color: black;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0;
+    height:40px;
+    line-height: 40px;
+    padding:10px;
+    display: flex;
+    align-items: flex-start;
+}
