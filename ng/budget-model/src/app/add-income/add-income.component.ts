@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BudgetModelService } from '../services/budget-model/budget-model.service';
 
 @Component({
   selector: 'app-add-income',
@@ -14,7 +16,7 @@ export class AddIncomeComponent implements OnInit {
 
   errorMessage: string;
 
-  constructor() { }
+  constructor(private service: BudgetModelService, private router: Router) { }
 
   ngOnInit(): void {
       this.errorMessage = '';
@@ -25,7 +27,21 @@ export class AddIncomeComponent implements OnInit {
 
   addIncome() {
       if (this.validateInputs()) {
-
+          this.service.addIncomeItem({
+              label: this.desc,
+              amount: this.amount,
+              freqType: this.frequency,
+              referenceDate: this.referenceDate,
+              eventType: 'INC'
+          }).subscribe(
+            item => {
+              console.log('Income item has been added.');
+              this.router.navigateByUrl('/');
+            },
+            err => {
+              console.log(err);
+            }
+          );
       }
   }
 

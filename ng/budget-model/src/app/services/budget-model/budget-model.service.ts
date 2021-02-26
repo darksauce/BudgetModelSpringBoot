@@ -16,4 +16,17 @@ export class BudgetModelService {
     );
   }
 
+  addIncomeItem(newBudgetItem: BudgetItem): Observable<BudgetItem> {
+    return this.httpClient.post<BudgetItem>(
+      `http://localhost:8080/api/v1/budget/income`,
+      newBudgetItem
+    );
+  }
+
+  addExpenseItem(newBudgetItem: BudgetItem): Observable<BudgetItem> {
+    return this.httpClient.post<BudgetItem>(
+      `http://localhost:8080/api/v1/budget/expense`,
+      newBudgetItem
+    );
+  }
 }

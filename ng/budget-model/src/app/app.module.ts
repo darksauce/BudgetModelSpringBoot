@@ -10,6 +10,13 @@ import { AddExpenseComponent } from './add-expense/add-expense.component';
 import { BudgetItemsComponent } from './budget-items/budget-items.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: BudgetItemsComponent },
+  { path: 'income', component: AddIncomeComponent },
+  { path: 'expense', component: AddExpenseComponent }
+];
 
 @NgModule({
   declarations: [
@@ -24,9 +31,13 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

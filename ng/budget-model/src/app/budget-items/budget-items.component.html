@@ -1,3 +1,4 @@
+<h1>Budget Items</h1>
 <table class="item-table" *ngIf="budgetItems">
     <tr>
         <th>Income/Expense</th>
@@ -12,5 +13,12 @@
         <td>{{ item.amount }}</td>
         <td>{{ item.freqType }}</td>
         <td>{{ item.referenceDate }}</td>
+    </tr>
+    <tr *ngIf="budgetItems.length == 0">
+        <td> </td>
+        <td>No items have been added yet.</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
     </tr>
 </table>
