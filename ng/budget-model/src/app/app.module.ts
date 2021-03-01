@@ -11,6 +11,7 @@ import { BudgetItemsComponent } from './budget-items/budget-items.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const appRoutes: Routes = [
   { path: '', component: BudgetItemsComponent },
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule,
     RouterModule.forRoot(
       appRoutes
     )
