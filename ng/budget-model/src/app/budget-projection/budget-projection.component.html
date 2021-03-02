@@ -1,0 +1,27 @@
+<h1>Budget Projection</h1>
+<div class="starting-box">
+  <span>Starting Balance: </span>
+  <input type="text" [(ngModel)]="startingBalance">
+  <button (click)="update()">Update Projection</button>
+</div>
+<table class="item-table" *ngIf="projItems">
+    <tr>
+        <th>Description</th>
+        <th>Income</th>
+        <th>Expense</th>
+        <th>Balance</th>
+    </tr>
+    <tr *ngFor="let item of projItems; index as i;">
+        <td>{{ item.label }}</td>
+        <td>{{ item.income }}</td>
+        <td>{{ item.expense }}</td>
+        <td>{{ item.balance }}</td>
+    </tr>
+    <tr *ngIf="projItems.length == 0">
+        <td> </td>
+        <td>No items have been added yet.</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+</table>

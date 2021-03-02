@@ -12,11 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BudgetProjectionComponent } from './budget-projection/budget-projection.component';
 
 const appRoutes: Routes = [
   { path: '', component: BudgetItemsComponent },
   { path: 'income', component: AddIncomeComponent },
-  { path: 'expense', component: AddExpenseComponent }
+  { path: 'expense', component: AddExpenseComponent },
+  { path: 'projection', component: BudgetProjectionComponent }
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     TitlebarComponent,
     AddIncomeComponent,
     AddExpenseComponent,
-    BudgetItemsComponent
+    BudgetItemsComponent,
+    BudgetProjectionComponent
   ],
   imports: [
     BrowserModule,
