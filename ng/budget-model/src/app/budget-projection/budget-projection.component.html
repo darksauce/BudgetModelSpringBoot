@@ -4,7 +4,8 @@
   <input type="text" [(ngModel)]="startingBalance">
   <button (click)="update()">Update Projection</button>
 </div>
-<table class="item-table" *ngIf="projItems">
+<!-- Uses Bootstrap Table Styling -->
+<table class="table" *ngIf="projItems">
     <tr>
         <th>Description</th>
         <th>Income</th>
@@ -18,10 +19,9 @@
         <td>{{ item.balance }}</td>
     </tr>
     <tr *ngIf="projItems.length == 0">
-        <td> </td>
+        <td></td>
         <td>No items have been added yet.</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td></td>
+        <td></td>
     </tr>
 </table>

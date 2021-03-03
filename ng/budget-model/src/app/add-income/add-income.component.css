@@ -1,3 +1,7 @@
+h1 {
+  margin-left:10px;
+}
+
 .item-table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -39,6 +43,7 @@ input {
 
 select {
     width:98%;
+    padding:3px;
 }
 
 button {

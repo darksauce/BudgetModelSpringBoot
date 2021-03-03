@@ -1,5 +1,6 @@
 <h1>Budget Items</h1>
-<table class="item-table" *ngIf="budgetItems">
+<!-- Uses Bootstrap Table Styling -->
+<table class="table" *ngIf="budgetItems">
     <tr>
         <th>Income/Expense</th>
         <th>Description</th>
@@ -15,10 +16,10 @@
         <td>{{ item.referenceDate }}</td>
     </tr>
     <tr *ngIf="budgetItems.length == 0">
-        <td> </td>
+        <td></td>
         <td>No items have been added yet.</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
 </table>

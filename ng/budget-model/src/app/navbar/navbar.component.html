@@ -1,8 +1,21 @@
-<header class="navbar">
-    <nav>
-        <a routerLink="/" title="Budget Items"><fa-icon [icon]="faListAlt" class="fa-2x"></fa-icon></a> &nbsp;
-        <a routerLink="/add-income" title="Add Income"><fa-icon [icon]="faCoins" class="fa-2x"></fa-icon></a> &nbsp;
-        <a routerLink="/add-expense" title="Add Expense"><fa-icon [icon]="faCreditCard" class="fa-2x"></fa-icon></a> &nbsp;
-        <a routerLink="/projection" title="Budget Projection"><fa-icon [icon]="faChartLine" class="fa-2x"></fa-icon></a> &nbsp;
-    </nav>
-</header>
+<!-- Uses Bootstrap Navbar -->
+<nav class="navbar navbar-dark ">
+  <div class="container-fluid">
+    <div class="expand navbar-expand">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/" title="Budget Items"><fa-icon [icon]="faListAlt" class="fa-2x"></fa-icon></a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a routerLink="/add-income" title="Add Income"><fa-icon [icon]="faCoins" class="fa-2x"></fa-icon></a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a routerLink="/add-expense" title="Add Expense"><fa-icon [icon]="faCreditCard" class="fa-2x"></fa-icon></a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <a routerLink="/projection" title="Budget Projection"><fa-icon [icon]="faChartLine" class="fa-2x"></fa-icon></a> &nbsp;
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
