@@ -1,17 +1,20 @@
-<h1>Budget Projection</h1>
+<h1 class="mt-2">Budget Projection</h1>
 <div class="starting-box">
   <span>Starting Balance: </span>
   <input type="text" [(ngModel)]="startingBalance">
   <button (click)="update()">Update Projection</button>
 </div>
 <!-- Uses Bootstrap Table Styling -->
-<table class="table" *ngIf="projItems">
+<table class="table table-hover table-striped mt-3" *ngIf="projItems">
+  <thead class="thead-light">
     <tr>
         <th>Description</th>
         <th>Income</th>
         <th>Expense</th>
         <th>Balance</th>
     </tr>
+  </thead>
+  <tbody>
     <tr *ngFor="let item of projItems; index as i;">
         <td>{{ item.label }}</td>
         <td>{{ item.income }}</td>
@@ -24,4 +27,5 @@
         <td></td>
         <td></td>
     </tr>
+  </tbody>
 </table>

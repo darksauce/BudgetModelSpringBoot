@@ -1,7 +1,8 @@
-<h1>Add Income</h1>
+<h1 class="mt-2">Add Income</h1>
 <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
 <!-- Uses Bootstrap Table Styling -->
-<table class="table">
+<table class="table table-hover table-striped mt-3">
+  <thead class="thead-light">
     <tr>
         <th>Income/Expense</th>
         <th>Description</th>
@@ -9,6 +10,8 @@
         <th>Frequency</th>
         <th>Reference Date</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
         <td>INCOME</td>
         <td><input type="text" [(ngModel)]="desc"></td>
@@ -26,6 +29,7 @@
         </td>
         <td><input type="text" [(ngModel)]="referenceDate"></td>
     </tr>
+  </tbody>
 </table>
 <button (click)="addIncome()">Add Income</button>
 
