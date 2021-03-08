@@ -19,7 +19,7 @@ import au.com.whitellama.budgetmodelling.model.FinancialSummary;
 import au.com.whitellama.budgetmodelling.model.Income;
 import au.com.whitellama.budgetmodelling.service.BudgetModelService;
 
-@CrossOrigin(origins = "http://localhost:4200") // allow local angular client
+@CrossOrigin("http://localhost:4200") // allow local angular client
 @RequestMapping("api/v1/budget")
 @RestController
 public class BudgetModelController {

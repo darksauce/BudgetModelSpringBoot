@@ -64,13 +64,13 @@ public class BudgetCalculator {
 				if (event.getEventType().equals(BudgetEvent.TYPE_INCOME)) {
 					Income inc = (Income) event;
 					finSum.setIncome(finSum.getIncome() + inc.getAmount());
-					prependEventName(finSum, inc.getLabel());
+					appendEventName(finSum, inc.getLabel());
 					modifier += inc.getAmount();
 				}
 				else if (event.getEventType().equals(BudgetEvent.TYPE_EXPENSE)) {
 					Expense exp = (Expense) event;
 					finSum.setExpense(finSum.getExpense() + exp.getAmount());
-					prependEventName(finSum, exp.getLabel());
+					appendEventName(finSum, exp.getLabel());
 					modifier -= exp.getAmount();
 				}
 			}
@@ -78,13 +78,13 @@ public class BudgetCalculator {
 		return modifier;
 	}
 
-	private void prependEventName(FinancialSummary finSum, String label) {
+	private void appendEventName(FinancialSummary finSum, String label) {
 		int spos = finSum.getLabel().indexOf('-');
 		if (spos > 0) {
-			finSum.setLabel(label + ", " + finSum.getLabel());
+			finSum.setLabel(finSum.getLabel() + ", " + label);
 		}
 		else {
-			finSum.setLabel(label + " - " + finSum.getLabel());
+			finSum.setLabel(finSum.getLabel() + " - " + label);
 		}
 	}
 }

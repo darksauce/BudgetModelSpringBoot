@@ -9,31 +9,41 @@ import { FinancialSummary } from './model/financial-summary';
 })
 export class BudgetModelService {
 
-  constructor(private httpClient: HttpClient) { }
+  httpOptions = {
+    // TODO switch Auth to JWT
+    headers: { 'Authorization': 'Basic YnVkZ2V0dXNlcjojMXRzYVMzY3IzdA==' }
+  };
+
+  constructor(private httpClient: HttpClient) { 
+  }
 
   getBudgetItems(): Observable<BudgetItem[]> {
     return this.httpClient.get<BudgetItem[]>(
-      `http://localhost:8080/api/v1/budget`
+      `http://localhost:8080/api/v1/budget`,
+      this.httpOptions
     );
   }
 
   addIncomeItem(newBudgetItem: BudgetItem): Observable<BudgetItem> {
     return this.httpClient.post<BudgetItem>(
       `http://localhost:8080/api/v1/budget/income`,
-      newBudgetItem
+      newBudgetItem,
+      this.httpOptions
     );
   }
 
   addExpenseItem(newBudgetItem: BudgetItem): Observable<BudgetItem> {
     return this.httpClient.post<BudgetItem>(
       `http://localhost:8080/api/v1/budget/expense`,
-      newBudgetItem
+      newBudgetItem,
+      this.httpOptions
     );
   }
 
   getProjectionItems(startingBalance: number): Observable<FinancialSummary[]> {
     return this.httpClient.get<FinancialSummary[]>(
-      `http://localhost:8080/api/v1/budget/model/` + startingBalance
+      `http://localhost:8080/api/v1/budget/model/` + startingBalance,
+      this.httpOptions
     );
   }
 }
